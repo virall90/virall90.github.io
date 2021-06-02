@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SCORM TEST</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div style="margin:50px 0">
+        <iframe src="https://storage.yandexcloud.net/odin-storage-public/6d184bf8-d3c9-439a-8454-ef4d0675560e/res/index.html" style="border:0px #ffffff none;" id="iframescorm" name="myiFrame" scrolling="no" frameborder="1"
+            marginheight="0px" marginwidth="0px" height="650px" width="100%" type="text/html"
+            allowfullscreen="allowfullscreen" webkitallowfullscreen="webkitallowfullscreen"
+            mozallowfullscreen="mozallowfullscreen"></iframe>
+    </div>
+
+    <script type="text/javascript" src="scormAPI.js"></script>
+        <script>
+
+        window.API.on("LMSInitialize", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSInitialize', simplifiedObject);
+        });
+
+        window.API.on("LMSSetValue", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSSetValue', simplifiedObject);
+        });
+
+        window.API.on("LMSCommit", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSCommit', simplifiedObject);
+        });
+        window.API.on("LMSGetLastError", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSGetLastError', simplifiedObject);
+        });
+
+        window.API.on("LMSGetErrorString", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSGetErrorString', simplifiedObject);
+        });
+        window.API.on("LMSGetDiagnostic", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSGetDiagnostic', simplifiedObject);
+        });
+
+        window.API.on("LMSFinish", function () {
+            let simplifiedObject = window.API.cmi.toJSON();
+            console.log('LMSFinish', simplifiedObject);
+        });
+    </script>
+</body>
+
+</html>
